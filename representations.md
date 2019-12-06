@@ -38,6 +38,6 @@ Representation that contains the full information about the fuel price in a sing
 
 [fuel-info-representation]: representations.md#Fuel-info
 [station-representation]: representations.md#Fuel-station
-[get-bank]: requests.md#getting-a-single-bank-info
-[get-price]: requests.md#getting-rate-that-is-offered-by-a-single-bank
-[get-min]: requests.md#getting-the-minimum-rate
+[get-fuel-station]: requests.md#getting-a-single-fuel-station-info
+[get-price]: requests.md#getting-fuel-price-at-exact-fuel-station
+[get-min]: requests.md#getting-the-minimum-fuel-price

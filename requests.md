@@ -21,7 +21,7 @@ where `fuelStation` is a [station representation][station-representation].
 
 #### Getting a single fuel station info
 
-Method: `GET /fuel_stations/:id` where `id` is a unique bank descriptor.
+Method: `GET /fuel_stations/:id` where `id` is a unique fuel station descriptor.
 
 Response: `fuelStation` where `fuelStation` is a [station representation][station-representatio].
 
@@ -44,21 +44,21 @@ Response:
 
 where `fuelPrice` is a [fuel price representation][fuel-price-representation].
 
-#### Getting the minimum rate
+#### Getting the minimum fuel price
 
 Method: `GET /fuelPrices/min`
 
 Response: `fuelPrice` where `fuelPrice` is a [fuel price representation][fuel-price-representation].
 
-### Rate by a bank
+### Fuel price at fuel station
 
-#### Getting rate that is offered by a single bank
+#### Getting fuel price at exact fuel station
 
 Method: `GET /fuel_stations/:id/fuel_price` where `id` is a unique fuel station descriptor.
 
 Response: `fuelPrice` where `fuelPrice` is a [fuel price representation][fuel-price-representation].
 
-#### Updating rate that is offered by a single bank
+#### Updating fuel price at exact fuel station
 
 Method: `PUT /fuel_stations/:id/fuel_price` where `id` is a unique fuel station descriptor.
 
