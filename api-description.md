@@ -10,4 +10,3 @@ This service implement REST architecture. Some factors which make this solution 
 But this solution is not pure REST, because:
 
 * Because client-server  messages are not self-descriptive, client will need to hard code the description and parsing of message.
-* Not all resources have their own identifiers.
