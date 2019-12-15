@@ -6,21 +6,23 @@ Representation of a Fuel Station information (`fuelStation`). It contains a full
 
 ```{json}
 {
-    "name": str,
-    "id": str,
+    "content_type" : "fuelStation",
     "self": str,
+    "name": str,
+    "fuel_info": "fuel_stations/{self}/fuel_info",
 }
 ```
 
 ## Fuel info
 
-Representation of fuel info (`fuelInfo`). The `type` and `maxBuy` fields contain the type of the fuel to buy and volume of fuel available to buy. The `cost` field contains the price of 1 unit of the fuel that you want to buy in local currency.
+Representation of fuel info (`fuelInfo`). The `type` and `maxSell` fields contain the type of the fuel to buy and volume of fuel available to buy. The `cost` field contains the price of 1 unit of the fuel that you want to buy in local currency.
 
 ```{json}
 {
+    "content_type" : "fuelInfo",
     "cost": float,
     "type": str,
-    "maxBuy": float,
+    "max_sell" : float,
 }
 ```
 
@@ -30,9 +32,20 @@ Representation that contains the full information about the fuel price in a sing
 
 ```{json}
 {
-    "station": fuelStation,
-    "info": fuelInfo,
+    "content_type" : "fuelPrice",
     "self": str,
+    "station_url": str,
+    
+    "links": [
+        {
+            "rel": "fuel_station",
+            "href": "fuel_stations/{station_url}"
+        },
+        {
+            "rel": "fuel_info",
+            "href": "fuel_stations/{station_url}/fuel_info"
+        }
+    ],
 }
 ```
 

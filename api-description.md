@@ -9,4 +9,4 @@ This service implement REST architecture. Some factors which make this solution 
 
 But this solution is not pure REST, because:
 
-* Because client-server  messages are not self-descriptive, client will need to hard code the description and parsing of message.
+* Client-server messages are self-descriptive only if there is already some information about our data on Client. So, content_type will show what kind of data is in received Json.

@@ -21,7 +21,7 @@ where `fuelStation` is a [station representation][station-representation].
 
 #### Getting a single fuel station info
 
-Method: `GET /fuel_stations/:id` where `id` is a unique fuel station descriptor.
+Method: `GET /fuel_stations/{fuel_station_url}` where `fuel_station_url` is a unique fuel station url.
 
 Response: `fuelStation` where `fuelStation` is a [station representation][station-representatio].
 
@@ -31,14 +31,14 @@ The `fuelPrice` collection contains information about the price for fuel that is
 
 #### Getting all fuel prices
 
-Method: `GET /fuelPrices`
+Method: `GET /fuel_prices`
 
 Response:
 
 ```{json}
 {
-   "fuelPrices": [fuelPrice],
-   "self": "/fuelPrices",
+   "fuel_prices": [fuelPrice],
+   "self": "/fuel_prices",
 }
 ```
 
@@ -46,25 +46,26 @@ where `fuelPrice` is a [fuel price representation][fuel-price-representation].
 
 #### Getting the minimum fuel price
 
-Method: `GET /fuelPrices/min`
+Method: `GET /fuel_prices/min`
 
 Response: `fuelPrice` where `fuelPrice` is a [fuel price representation][fuel-price-representation].
 
-### Fuel price at fuel station
+### Fuel info at fuel station
 
-#### Getting fuel price at exact fuel station
+#### Getting fuel info at exact fuel station
 
-Method: `GET /fuel_stations/:id/fuel_price` where `id` is a unique fuel station descriptor.
+Method: `GET /fuel_stations/{fuel_station_url}/fuel_info` where `fuel_station_url` is a unique fuel station url.
 
-Response: `fuelPrice` where `fuelPrice` is a [fuel price representation][fuel-price-representation].
+Response: `fuelInfo` where `fuelInfo` is a [fuel info representation][fuel-info-representation].
 
-#### Updating fuel price at exact fuel station
+#### Updating fuel info at exact fuel station
 
-Method: `PUT /fuel_stations/:id/fuel_price` where `id` is a unique fuel station descriptor.
+Method: `PUT /fuel_stations/{fuel_station_url}/fuel_info` where `fuel_station_url` is a unique fuel station url.
 
-Request: `fuelPrice` where `fuelPrice` is a [fuel price representation][fuel-price-representation]. Fields `self`, `fuel_station.self`, `fuel_station.name` are ignored.
+Request: `fuelInfo` where `fuelInfo` is a [fuel info representation][fuel-info-representation].
 
-Response: `fuelPrice` where `fuelPrice` is a [fuel price representation][fuel-price-representation].
+Response: `fuelInfo` where `fuelInfo` is a [fuel info representation][fuel-info-representation].
 
 [station-representatio]: representations.md#Fuel-station
-[fuel-price-representation]: representations.md#Fuel-buy-price
+[fuel-info-representation]: representations.md#Fuel-info
+[fuel-price-representation]: representations.md#Fuel-price-representation
