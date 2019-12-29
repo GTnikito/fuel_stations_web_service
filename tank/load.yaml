@@ -1,0 +1,15 @@
+overload:
+  enabled: true
+  package: yandextank.plugins.DataUploader
+  token_file: "token.txt"
+phantom:
+  address: localhost:8080
+  load_profile:
+    load_type: rps
+    schedule: line(1, 4000, 1m) const(4000, 5m)
+  uris:
+    - /hello_world/fuel_stations
+    - /hello_world/fuel_stations/id/1
+  instances: 10000
+telegraf:
+  enabled: true
